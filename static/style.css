@@ -1,0 +1,20 @@
+body {
+  background: url('https://uploads-ssl.webflow.com/6008334066c47be740656954/60365411cb9274038a848418_SOS-UK_Morse%20code_dense_standard.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+h1 {
+    color: white;
+}
+
+.form {
+    padding: 15% 30%;
+    text-align: center;
+}
+
+.button {
+    margin: 3%;
+}
