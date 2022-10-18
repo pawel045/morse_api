@@ -12,16 +12,17 @@
 </head>
 <body>
     <div class="form">
-        <form action="/translate" method="post">
+        <form>
           <!-- Message input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="form4Example3"><h1>Text to translate</h1></label>
             <textarea name="text" class="form-control w-300" id="form4Example3" rows="8"></textarea>
           </div>
-
           <!-- Translate button -->
-          <button type="submit" class="btn btn-outline-light btn-lg btn-block mb-4 button">Translate</button>
+          <button type="submit" formaction="/encrypt" class="btn btn-outline-light btn-lg btn-block mb-4 button">Encrypt</button>
+            <button type="submit" formaction="/decrypt" class="btn btn-outline-light btn-lg btn-block mb-4 button">Decrypt</button>
         </form>
+
         <form action="/random">
           <button type="submit" class="btn btn-light btn-block btn-lg mb-4 button">Random char</button>
         </form>

@@ -28,19 +28,46 @@ async def random():
 
 
 # GET a translated text
-@app.get("/translate/{text}")
-async def translate(text: str = Form(...)):
-    translated_text = alphabet.translate(text)
+@app.get("/encrypt")
+async def decrypt(text: str):
+    encrypted_text = alphabet.encrypt(text)
 
-    if 'X' in translated_text:
+    if 'X' in encrypted_text:
         return {
             'length': len(text),
-            text: translated_text,
-            'X': 'some characters not recognized',
+            'original text': text,
+            'encrypted text': encrypted_text,
+            'X': 'some characters unrecognized',
         }
     else:
         return {
             'length': len(text),
-            text: translated_text,
+            'original text': text,
+            'translated text': encrypted_text,
         }
-    
+
+
+@app.get("/decrypt")
+async def encrypt(text: str):
+    decrypted_text = alphabet.decrypt(text)
+
+    if not decrypted_text:
+        return {
+            'error': 'Encrypted message is not a morse code text'
+        }
+
+    elif '_' in decrypted_text:
+        return {
+            'length': len(text),
+            'original text': text,
+            'encrypted text': decrypted_text,
+            '_': 'some characters unrecognized',
+        }
+
+    else:
+        return {
+            'length': len(text),
+            'original text': text,
+            'translated text': decrypted_text,
+        }
+
