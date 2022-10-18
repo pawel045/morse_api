@@ -59,13 +59,3 @@ class Alphabet:
 
         else:
             return False
-
-
-z = Alphabet()
-correct = z.decrypt('.--. .- .-- . .-.. / - --- / .-.. .- -- .-')
-partly_correct = z.decrypt('.--.------------- .- .-- . .-.. / - --- / .-.. .- -- .-')
-incorrect = z.decrypt('pawel to lama')
-
-print(correct)
-print(partly_correct)
-print(incorrect)
